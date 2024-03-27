@@ -1,0 +1,50 @@
+{
+    "sourceFile": "lib/pages/search_map_page.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1711561976349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1711561998557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,13 @@\n \r\n class _SearchMapPageState extends State<SearchMapPage> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Scaffold();\r\n+    return Scaffold(\r\n+      body: Center(\r\n\\ No newline at end of file\n+        child: Column(\r\n+          children: [],\r\n+        ),\r\n+      ),\r\n+    );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1711562005850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,10 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: Center(\r\n         child: Column(\r\n+          crossAxisAlignment: CrossAxisAlignment.center,\r\n+          mainAxisAlignment: MainAxisAlignment.center,\r\n           children: [],\r\n         ),\r\n       ),\r\n     );\r\n"
+                },
+                {
+                    "date": 1711562070753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,20 @@\n       body: Center(\r\n         child: Column(\r\n           crossAxisAlignment: CrossAxisAlignment.center,\r\n           mainAxisAlignment: MainAxisAlignment.center,\r\n-          children: [],\r\n+          children: [\r\n+            TextFormField(\r\n+              decoration: InputDecoration(\r\n+                hintText: 'Search your city',\r\n+                filled: true,\r\n+                fillColor: Colors.grey.shade300,\r\n+                border: OutlineInputBorder(\r\n+                  borderRadius: BorderRadius.circular(8.0),\r\n+                ),\r\n+              ),\r\n+            ),\r\n+          ],\r\n         ),\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1711562079457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n               decoration: InputDecoration(\r\n                 hintText: 'Search your city',\r\n                 filled: true,\r\n                 fillColor: Colors.grey.shade300,\r\n+                isDense: true,\r\n                 border: OutlineInputBorder(\r\n                   borderRadius: BorderRadius.circular(8.0),\r\n                 ),\r\n               ),\r\n"
+                },
+                {
+                    "date": 1711562090923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,24 +11,27 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: Center(\r\n-        child: Column(\r\n-          crossAxisAlignment: CrossAxisAlignment.center,\r\n-          mainAxisAlignment: MainAxisAlignment.center,\r\n-          children: [\r\n-            TextFormField(\r\n-              decoration: InputDecoration(\r\n-                hintText: 'Search your city',\r\n-                filled: true,\r\n-                fillColor: Colors.grey.shade300,\r\n-                isDense: true,\r\n-                border: OutlineInputBorder(\r\n-                  borderRadius: BorderRadius.circular(8.0),\r\n+        child: Padding(\r\n+          padding: const EdgeInsets.all(24.0),\r\n+          child: Column(\r\n+            crossAxisAlignment: CrossAxisAlignment.center,\r\n+            mainAxisAlignment: MainAxisAlignment.center,\r\n+            children: [\r\n+              TextFormField(\r\n+                decoration: InputDecoration(\r\n+                  hintText: 'Search your city',\r\n+                  filled: true,\r\n+                  fillColor: Colors.grey.shade300,\r\n+                  isDense: true,\r\n+                  border: OutlineInputBorder(\r\n+                    borderRadius: BorderRadius.circular(8.0),\r\n+                  ),\r\n                 ),\r\n               ),\r\n-            ),\r\n-          ],\r\n+            ],\r\n+          ),\r\n         ),\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1711562125081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,18 @@\n   State<SearchMapPage> createState() => _SearchMapPageState();\r\n }\r\n \r\n class _SearchMapPageState extends State<SearchMapPage> {\r\n+  late final TextEditingController _searchController;\r\n+  late final FocusNode _searchNode;\r\n+\r\n   @override\r\n+  void initState() {\r\n+   \r\n+    super.initState();\r\n+  }\r\n+\r\n+  @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: Center(\r\n         child: Padding(\r\n"
+                },
+                {
+                    "date": 1711562147732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,20 @@\n \r\n   @override\r\n   void initState() {\r\n     super.initState();\r\n+    _searchController = TextEditingController();\r\n+    _searchNode = FocusNode();\r\n   }\r\n \r\n   @override\r\n+  void dispose() {\r\n+    _searchController.dispose();\r\n+    _searchNode.dispose();\r\n+    super.dispose();\r\n+  }\r\n+\r\n+  @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: Center(\r\n         child: Padding(\r\n"
+                },
+                {
+                    "date": 1711562163739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,10 @@\n             crossAxisAlignment: CrossAxisAlignment.center,\r\n             mainAxisAlignment: MainAxisAlignment.center,\r\n             children: [\r\n               TextFormField(\r\n+                controller: _searchController,\r\n+                focusNode: _searchNode,\r\n                 decoration: InputDecoration(\r\n                   hintText: 'Search your city',\r\n                   filled: true,\r\n                   fillColor: Colors.grey.shade300,\r\n"
+                }
+            ],
+            "date": 1711561976349,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass SearchMapPage extends StatefulWidget {\r\n  const SearchMapPage({super.key});\r\n\r\n  @override\r\n  State<SearchMapPage> createState() => _SearchMapPageState();\r\n}\r\n\r\nclass _SearchMapPageState extends State<SearchMapPage> {\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold();\r\n  }\r\n}"
+        }
+    ]
+}

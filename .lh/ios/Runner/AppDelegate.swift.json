@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ios/Runner/AppDelegate.swift",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1711030482277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1711030545263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,16 @@\n import UIKit\r\n import Flutter\r\n+import GoogleMaps\r\n \r\n @UIApplicationMain\r\n @objc class AppDelegate: FlutterAppDelegate {\r\n-  \r\n   override func application(\r\n     _ application: UIApplication,\r\n     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?\r\n   ) -> Bool {\r\n     GeneratedPluginRegistrant.register(with: self)\r\n+    GMSServices.provideAPIKey(\"YOUR-API-KEY\")\r\n     return super.application(application, didFinishLaunchingWithOptions: launchOptions)\r\n   }\r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1711030570937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+import UIKit\r\n+import Flutter\r\n+import GoogleMaps\r\n+\r\n+@UIApplicationMain\r\n+@objc class AppDelegate: FlutterAppDelegate {\r\n+  override func application(\r\n+    _ application: UIApplication,\r\n+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?\r\n+  ) -> Bool {\r\n+    GeneratedPluginRegistrant.register(with: self)\r\n+    GMSServices.provideAPIKey(\"AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao\")\r\n+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)\r\n+  }\r\n+  \r\n+}\r\n"
+                }
+            ],
+            "date": 1711030482277,
+            "name": "Commit-0",
+            "content": "import UIKit\r\nimport Flutter\r\n\r\n@UIApplicationMain\r\n@objc class AppDelegate: FlutterAppDelegate {\r\n  \r\n  override func application(\r\n    _ application: UIApplication,\r\n    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?\r\n  ) -> Bool {\r\n    GeneratedPluginRegistrant.register(with: self)\r\n    return super.application(application, didFinishLaunchingWithOptions: launchOptions)\r\n  }\r\n  \r\n}\r\n"
+        }
+    ]
+}

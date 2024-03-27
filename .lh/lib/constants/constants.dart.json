@@ -1,0 +1,34 @@
+{
+    "sourceFile": "lib/constants/constants.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1711030028634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1711030040886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-const String GOOGLE_MAP_KEY = '';\r\n+// ignore_for_file: constant_identifier_names\r\n+\r\n+const String GOOGLE_MAP_KEY = 'AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao';\r\n"
+                },
+                {
+                    "date": 1711562484002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n // ignore_for_file: constant_identifier_names\r\n \r\n const String GOOGLE_MAP_KEY = 'AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao';\r\n+const String GOOGLE_BASE_URL =\r\n+    'https://maps.googleapis.com/maps/api/place/autocomplete/json';\r\n"
+                },
+                {
+                    "date": 1711562542116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n // ignore_for_file: constant_identifier_names\r\n \r\n const String GOOGLE_MAP_KEY = 'AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao';\r\n const String GOOGLE_BASE_URL =\r\n-    'https://maps.googleapis.com/maps/api/place/autocomplete/json';\r\n+    'https://maps.googleapis.com/maps/api/place/autocomplete/';\r\n"
+                },
+                {
+                    "date": 1711562883609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n // ignore_for_file: constant_identifier_names\r\n \r\n const String GOOGLE_MAP_KEY = 'AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao';\r\n const String GOOGLE_BASE_URL =\r\n-    'https://maps.googleapis.com/maps/api/place/autocomplete/';\r\n+    'https://maps.googleapis.com/maps/api/place/autocomplete/json';\r\n"
+                }
+            ],
+            "date": 1711030028634,
+            "name": "Commit-0",
+            "content": "const String GOOGLE_MAP_KEY = '';\r\n"
+        }
+    ]
+}
